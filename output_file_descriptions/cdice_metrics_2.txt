@@ -1,0 +1,55 @@
+cdice_metrics2.txt or metrics2.txt
+
+climate metrics
+This contains selected time step output up to 2255.
+white-space separated
+1 row for each execution of cdice, 25 columns
+
+sampled factors can be found in the cdice_metrics1 file
+
+col   altcol   variable
+ 0       1     model fail time step (if not zero, contains time step
+                   when a trap for abatement factor, capital, or
+                   consumption is detected; can be used for filtering)
+ 
+Atmospheric Temperature [degrees C above initial value]
+ 1       2     tatm 2025
+ 2       3     tatm 2055
+ 3       4     tatm 2075
+ 4       5     tatm 2105
+ 5       6     tatm 2125
+ 6       7     tatm 2155
+ 7       8     tatm 2205
+ 8       9     tatm 2255
+
+Ocean Temperature [degrees C above initial value]
+ 9      10     tocn 2025
+10      11     tocn 2055
+11      12     tocn 2075
+12      13     tocn 2105
+13      14     tocn 2125
+14      15     tocn 2155
+15      16     tocn 2205
+16      17     tocn 2255
+
+Atmospheric Burden of Carbon [Gt C]
+17      18     mat 2025
+18      19     mat 2055
+19      20     mat 2075
+20      21     mat 2105
+21      22     mat 2125
+22      23     mat 2155
+23      24     mat 2205
+24      25     mat 2255
+
+Radiative Forcing  [W/m2]
+25      26     forc 2025
+26      27     forc 2055
+27      28     forc 2075
+28      29     forc 2105
+29      30     forc 2125
+30      31     forc 2155
+31      32     forc 2205
+32      33     forc 2255
+24      25     forc 2305
+

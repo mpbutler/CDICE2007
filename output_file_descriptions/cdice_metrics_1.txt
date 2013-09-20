@@ -1,0 +1,79 @@
+cdice_metrics1.txt or metrics1.txt
+
+white-space separated
+1 row for each parameter sample execution of cdice
+Number of columns will depend on number of parameters sampled.
+
+col   altcol   variable
+ 
+ 0       1     Discounted Utility (objective function)
+ 1       2     Cumulative Emissions in 2595 (end of run)
+ 2       3     Net Present Value of Climate Damages in 2205
+ 3       4     Net Present Value of Abatement Costs in 2205
+ 4       5     Net Present Value of Total Damages/Costs in 2205
+ 5       6     [0, not used]
+ 
+ the next few metrics indicate the time step (beginning with 1)
+ in the model execution when a threshold is exceeded
+ Value will be 0 if the threshold is not reached.
+ 6       7     fosslim (6000 Gt C)
+ 7       8     2C air temperature increase (relative to 1900)
+ 8       9     4C air temperature increase
+ 9      10     6C air temperature increase
+10      11     8C air temperature increase
+11      12     10C air temperature increase
+12      13     2xCO2 (in terms of ppm in atmosphere)
+13      14     2.5xCO2 (these are relative to preindustrial)
+14      15     3xCO2
+15      16     model fail (abatement factor or
+                           capital constraint or
+                           consumption constraint)
+
+the remaining are the values of parameters in this sample
+and will vary depending on the number of parameters sampled
+
+for 7 parameter sampling:
+16      17     popasym
+17      18     ga0
+18      19     gsigma
+19      20     b12
+20      21     t2xco2
+21      22     a2
+22      23     pback0
+
+
+for 30 or 31 parameter sampling:
+16      17     popasym
+17      18     gpop0
+18      19     ga0
+19      20     dela
+20      21     sig0
+21      22     gsigma
+22      23     dsig
+23      24     dsig2
+24      25     eland0
+25      26     dtree
+26      27     b12
+27      28     b23
+28      29     fex0
+29      30     fex1
+30      31     t2xco2
+31      32     fco22x
+32      33     c1
+33      34     c3
+34      35     c4
+35      36     a1
+36      37     a2
+37      38     a3
+38      39     pback0
+39      40     theta2
+40      41     backrat
+41      42     gback
+42      43     partfrac1
+43      44     partfrac2
+44      45     partfracn
+45      46     dpartfrac
+46      47     saverate0 (for 31 parameter sampling only)
+
+
+

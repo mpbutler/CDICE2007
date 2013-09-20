@@ -1,0 +1,141 @@
+Notes on format of modelout (or model dump) file:
+
+
+The modelout file was designed to have similar content to an enhanced
+'put' file we used for DICE-GAMS model output.
+The intent is to document 'all' the variables in the model.
+
+Note that DICE-GAMS output is typically in CSV format,
+the cdice output is fixed field length and white-space separated.
+
+Model dump files have 60 columns (decades of integration), and
+47 rows.
+
+Row 1 contains single item results variables, and values for
+exogenous parameters used in the run. The remainder of the rows
+are time series of decadal model variables.
+
+CDICE variable names in given in lowercase; corresponding names
+from DICE2007 GAMS version are in uppercase.
+
+Row 1: 
+  Column 1: Discounted Utility (objective function; discounted_utility)
+  Column 2: zero (not used in CDICE) 
+  Column 3: zero (not used in CDICE)
+  the exogenous parameters used in this run:
+  Column 4: ELASMU    elasmu
+  Column 5: PRSTP     prstp
+  Column 6: POP0      pop0
+  Column 7: GPOP0     gpop0
+  Column 8: POPASYM   popasym
+  Column 9: A0        a0
+  Column 10: GA0      ga0
+  Column 11: DELA     dela
+  Column 12: DK       dk
+  Column 13: GAMA     gama
+  Column 14: K0       k0
+  Column 15: SIG0     sig0
+  Column 16: GSIGMA   gsigma
+  Column 17: DSIG     dsig
+  Column 18: DSIG2    dsig2
+  Column 19: ELAND0   eland0
+  Column 20: MAT2000  mat2000
+  Column 21: MU2000   mup2000
+  Column 22: ML2000   mlo2000
+  Column 23: b12      b12
+  Column 24: b23      b23
+  Column 25: T2XCO2   t2xco2
+  Column 26: FEX0     fex0
+  Column 27: FEX1     fex1
+  Column 28: TOCEAN0  tocn0
+  Column 29: TATM0    tatm0
+  Column 30: C1       c1
+  Column 31: C3       c3
+  Column 32: C4       c4
+  Column 33: FCO22X   fco22x
+  Column 34: AA1      a1
+  Column 35: AA2      a2
+  Column 36: AA3      a3
+  Column 37: EXPCOST2 theta2
+  Column 38: PBACK    pback0
+  Column 39: BACKRAT  backrat
+  Column 40: GBACK    gback
+  Column 41: FOSSLIM  fosslim
+  Column 42: PARTFRACT1  partfrac1
+  Column 43: PARTFRACT2  partfrac2
+  Column 44: PARTFRACT21 partfracn
+  Column 45: DPARTFRACT  dpartfrac
+  Column 46: scale1   scale1
+  Column 47: scale2   scale2
+  Column 48: LIMMIU   limmiu
+  Column 49:            dtree
+  Column 50:            saverate0
+  Column 51: time step fosslim exceeded
+  Column 52: time step 2C increase exceeded
+  Column 53: time step 4C increase exceeded
+  Column 54: time step 6C increase exceeded
+  Column 55: time step 8C increase exceeded
+  Column 56: time step 10C increase exceeded
+  Column 57: time step CO2 exceeds 2x preindustrial
+  Column 58: time step CO2 exceeds 2.5x preindustrial
+  Column 59: time step CO2 exceeds 3x preindustrial
+  Column 60: model fail time step (multiple possible reasons)
+
+  
+Row 2: Year (middle of decade)
+
+Rows 3-24 are direct model outputs:
+Row 3: MIU (emission control rate: control variable) control_rate
+Row 4: FORC     forc
+Row 5: TAIR     tair
+Row 6: TOCEAN   tocn
+Row 7: MAT      mat
+Row 8: MU       mup
+Row 9: ML       mlo
+Row 10: E       emiss_tot
+Row 11: K       kap
+Row 12: C       consum
+Row 13: CPC     percap_consum
+Row 14: PCY     percap_prod
+Row 15: I (investment: control variable)    invest
+Row 16: S       savings
+Row 17: RI      real_int_rate
+Row 18: Y       production
+Row 19: YGROSS  gross_production
+Row 20: YNET    net_production
+Row 21: DAMAGES damages
+Row 22: ABATECOST abate_cost
+Row 23: CCA     emiss_cum
+Row 24: PERIODU utility
+
+Rows 25-29 are calculated values/intermediate model outputs
+Row 25: social cost of carbon [not used in cdice]
+Row 26: carbon tax (without participation)   ctax
+Row 27: carbon tax (with participation)      ctax_part
+Row 28: marginal production [not used in cdice]
+Row 29: marginal consumption [not used in cdice]
+
+Rows 30-40 are exogenous time series
+Row 30: GFACPOP    gfacpop
+Row 31: L          pop
+Row 32: GA         ga
+Row 33: AL         tfp
+Row 34: GSIG       gsig
+Row 35: SIGMA      sigma
+Row 36: COST1      theta1
+Row 37: ETREE      etree
+Row 38: RR         rr
+Row 39: FORCOTH    forcoth
+Row 40: PARTFRACT  phi
+
+Row 41: abatement factor   abatement_factor
+Row 42: damages factor     damages_factor
+Row 43: net present value of abatement costs  pv_abate_cost
+Row 44: net present value of damages pv_damages
+Row 45: real interest rate discount factors  rir_disc_factor
+Row 46: total costs (Total_cost:sum of damages and abate_cost)
+Row 47: net present value of total costs  pv_total_cost
+
+Note that the net present value metrics in Rows 43, 44, and 47
+are calculated using the discount factors in Row 45, which in turn
+are calculated from the modeled real interest rate in Row 17.

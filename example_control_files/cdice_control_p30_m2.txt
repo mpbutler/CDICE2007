@@ -1,0 +1,7 @@
+<sample_count> 61      // number of samples in factor sets file named below
+<parameter_count> 30   // number of parameters sampled in this experiment
+<mode> 2               // mode 1 input emission controls and savings; mode 2 emission controls only
+<factor_sets_file> factors30_samples_2per.txt
+<write_output> 1       // 1 write summary metrics files (1 row per sample); 0 do not write
+<model_dump> 1         // 1 write complete data dump of each sample; 0 do not write
+<start_year> 2005      // middle year of decade timestep

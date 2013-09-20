@@ -1,0 +1,12 @@
+factors sampled in the example sample files
+
+Factors are listed in column order in the sample files
+
+7 factor sampling
+popasym  ga0  gsigma  b12  t2xco2  a2  pback0
+
+30 factor sampling
+popasym  gpop0  ga0  dela  sig0  gsigma  dsig  dsig2  eland0  dtree  b12  b23  fex0  fex1  t2xco2  fco22x  c1  c3  c4  a1  a2  a3  pback0  theta2  backrat  gback  partfrac1  partfrac2  partfracn  dpartfrac
+
+31 factor sampling (30 factor sampling with addition of saverate0 in final column)
+popasym  gpop0  ga0  dela  sig0  gsigma  dsig  dsig2  eland0  dtree  b12  b23  fex0  fex1  t2xco2  fco22x  c1  c3  c4  a1  a2  a3  pback0  theta2  backrat  gback  partfrac1  partfrac2  partfracn  dpartfrac  saverate0

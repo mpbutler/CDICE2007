@@ -1,0 +1,93 @@
+CDICE code dated 20130822
+Code is cleaned up for public distribution:
+1. Participation rate input (mode 1) is commented out.
+    Need to have explicit participation scenarios to use this.
+	These are no longer available at the Nordhaus DICE website.
+2. Add parameter count as a required input in the control file.
+    This is used to set nParam. IF statements in CDICEMain.cpp
+    then supports loading of parameter set values into xreal 
+	depending on nParam. This eliminates the need for different 
+	code for different parameter set experiments. 
+	However, the user is obligated to add code to load xreal 
+	correctly if other experiments are desired.
+	Code currently permits only 7, 30, and 31 as parameter count.
+3. Reading the standard exogenous parameters file is omitted.
+    All DICE GAMS ->config. 'central values' are initialized 
+	in AllocateDICE in CDICEInput.cpp.
+	Parameters in sample file will have 7, 30 or 31 of these values 
+	overridden/replaced on a sample by sample basis based on
+	<parameter_count> in the control file.
+	The standard exogenous factors file will be retained as
+	documentation.
+4. All references to 19-parameter and 33-parameter experiments
+    have been removed.
+5. All references to alternative formats of the summary
+    metric files have been removed.
+6. GNU Lesser General Public License boilerplate text added to
+    all .cpp and .h code.
+7. Example Makefile has been simplified.
+8. Note that file output formats and documentation are
+    not changed. The 20121023 versions are current.	
+
+
+
+CDICE code dated 20121023
+   LINUX executable named as cdice_v04aN.exe where N is the number of parameters sampled
+
+1. added total costs and net present value total costs time series variables
+	(sum of climate damages and abatement costs)
+2. added net present value of total costs and one (currently empty) variable to metrics1 file
+    (Note that column designations in this file are now changed!)
+3. add metrics5 output file, currently populated with specific date entries
+    for total costs (matching dates in other metrics files)
+4. total costs and net present value total costs added as rows 46 and 47 of modelout (model dump)
+5. changes to support above in CDICE.h CDICEMain.cpp CDICEInput.cpp and CDICE.cpp	
+
+CDICE code dated 20120516	
+This change log covers all parameter versions (7, 19, 31, 33, ...);
+ 31 parameter version added 6 June; 30 parameter version added 9 July;
+ 19 parameter version added 2 August.
+ executable named as cdice_v03aN.exe where N is the number of parameters sampled
+See entry below dated 20120510 for procedure for changing number of parameters to be sampled.
+
+1. atmospheric burden thresholds changed to 2xCO2, 2.5xCO2, and 3xCO2
+      (previously 2xCO2, 3xCO2, and 4xCO2)
+2. 0.1% overage allowed on all thresholds before reporting
+3. NPV climate damages and abatement costs for metrics1 file are
+   changed from 250 years to 200 years
+4. Carbon Tax outputs included again in metrics4 file
+5. Contents of metrics2, metrics3, and metrics4 files now reflect
+   dates of 2025, 2055, 2075, 2105, 2125, 2155, and 2205
+   nTagAlongs variables updated accordingly
+6. CDICE.h cleaned up (obsolete variables removed)   
+
+
+CDICE code dated 20120510
+To facilitate testing 7 parameters with the latest code
+1. In CDICEMain.cpp change nparams global variable
+2. In CDICEMain.cpp  calc_CDICE function, modify the population of xreal[nparams]
+
+This code will produce the same abbreviated metrics files as in code20120508
+Be aware that there are a few extraneous variables that should be deleted in CDICE.h
+regardless of this change. (someday)  
+
+CDICE code dated 20120508
+
+To facilitate sobol analysis of larger sample runs:
+1. abbreviated versions of metrics2, metrics3, metrics4 files
+   Include only dates 2055, 2105, 2155, 2205, 2255, 2305
+2. Metrics4 file does not carry carbon tax variables in this version
+   
+
+CDICE code dated 20120404
+
+1. corrected abatement factor failure code
+2. added capital stock low limit constraint
+3. added consumption low limit constraint
+4. flagged first step at which any of the above happen in model_fail_step
+    (previously called abate_fail_step
+5. wrote model_fail_flag into metrics1 file (in place of abate_fail_flag)
+6. wrote model_fail_flag into last column of first row of model dump
+7. wrote model_fail_flag into first column of metrics2, metrics3, 
+    and metrics4 files (for subsequent filtering operation).
+8. added metricsfilter code (standalone program) [not used]

@@ -1,0 +1,53 @@
+cdice_metrics4.txt or metrics4.txt
+
+economic metrics2
+This contains selected time step output up to 2255.
+white-space separated
+1 row for each execution of cdice, 33 columns
+
+sampled factors can be found in the cdice_metrics1 file
+
+col   altcol   variable
+ 0       1     model fail time step (if not zero, contains time step
+                   when a trap for abatement factor, capital, or
+                   consumption is detected; used for filtering)
+ 
+Decadal Emissions [Gt C]
+ 1       2     emiss_tot 2025
+ 2       3     emiss_tot 2055
+ 3       4     emiss_tot 2075
+ 4       5     emiss_tot 2105
+ 5       6     emiss_tot 2125
+ 6       7     emiss_tot 2155
+ 7       8     emiss_tot 2205
+ 8       9     emiss_tot 2255
+
+Cumulative Emissions  [Gt C]
+ 9      10     emiss_cum 2025
+10      11     emiss_cum 2055
+11      12     emiss_cum 2075
+12      13     emiss_cum 2105
+13      14     emiss_cum 2125
+14      15     emiss_cum 2155
+15      16     emiss_cum 2205
+16      17     emiss_cum 2255
+
+Carbon Tax   [trillions of 2005 US$]
+17      18     carbon_tax 2025
+18      19     carbon_tax 2055
+19      20     carbon_tax 2075
+20      21     carbon_tax 2105
+21      22     carbon_tax 2125
+22      23     carbon_tax 2155
+23      24     carbon_tax 2205
+24      25     carbon_tax 2255
+
+Carbon Tax with Participation  [trillions of 2005 US$]
+25      26     carbon_tax_part 2025
+26      27     carbon_tax_part 2055
+27      28     carbon_tax_part 2075
+28      29     carbon_tax_part 2105
+29      30     carbon_tax_part 2125
+30      31     carbon_tax_part 2155
+31      32     carbon_tax_part 2205
+32      33     carbon_tax_part 2255

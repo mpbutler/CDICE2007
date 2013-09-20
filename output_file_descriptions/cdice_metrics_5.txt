@@ -1,0 +1,25 @@
+cdice_metrics5.txt or metrics5.txt
+
+economic metrics3
+This contains selected time step output up to 2255.
+white-space separated
+1 row for each execution of cdice, 9 columns
+
+sampled factors can be found in the cdice_metrics1 file
+
+col   altcol   variable
+ 0       1     model fail time step (if not zero, contains time step
+                   when a trap for abatement factor, capital, or
+                   consumption is detected; used for filtering)
+ 
+Total Costs (climate damages + abatement costs) [trillions of 2005 US$]
+ 1       2     total_cost 2025
+ 2       3     total_cost 2055
+ 3       4     total_cost 2075
+ 4       5     total_cost 2105
+ 5       6     total_cost 2125
+ 6       7     total_cost 2155
+ 7       8     total_cost 2205
+ 8       9     total_cost 2255
+
+(reserved for future use)

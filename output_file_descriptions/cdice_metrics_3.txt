@@ -1,0 +1,54 @@
+cdice_metrics3.txt or metrics3.txt
+
+economic metrics1
+This contains selected time step output up to 2255.
+white-space separated
+1 row for each execution of cdice, 33 columns
+
+sampled factors can be found in the cdice_metrics1 file
+
+col   altcol   variable
+ 0       1     model fail time step (if not zero, contains time step
+                   when a trap for abatement factor, capital, or
+                   consumption is detected; can be used for filtering)
+ 
+Production (GWP) [trillions of 2005 US$]
+ 1       2     production 2025
+ 2       3     production 2055
+ 3       4     production 2075
+ 4       5     production 2105
+ 5       6     production 2125
+ 6       7     production 2155
+ 7       8     production 2205
+ 8       9     production 2255
+
+Consumption  [trillions of 2005 US$]
+ 9      10     consumption 2025
+10      11     consumption 2055
+11      12     consumption 2075
+12      13     consumption 2105
+13      14     consumption 2125
+14      15     consumption 2155
+15      16     consumption 2205
+16      17     consumption 2255
+
+Climate Damages  [trillions of 2005 US$]
+17      18     damages 2025
+18      19     damages 2055
+19      20     damages 2075
+20      21     damages 2105
+21      22     damages 2125
+22      23     damages 2155
+23      24     damages 2205
+24      25     damages 2255
+
+Abatement Costs  [trillions of 2005 US$]
+25      26     abatecost 2025
+26      27     abatecost 2055
+27      28     abatecost 2075
+28      29     abatecost 2105
+29      30     abatecost 2125
+30      31     abatecost 2155
+31      32     abatecost 2205
+32      33     abatecost 2255
+

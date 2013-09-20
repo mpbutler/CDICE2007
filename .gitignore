@@ -1,0 +1,3 @@
+## Files to ignore in version control
+*.o
+*.exe
